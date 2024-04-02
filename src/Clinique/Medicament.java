@@ -26,6 +26,7 @@ public class Medicament {
         return "Medicament{" +
                 "nomMed='" + nomMed + '\'' +
                 ", quantite=" + quantite + "x" +
-                prix + '}';
+                ", prix=" + prix
+                    + '}';
     }
 }

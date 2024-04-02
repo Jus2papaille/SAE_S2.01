@@ -26,4 +26,13 @@ public class GestionRdv {
     public void setRdvPris(boolean rdvPris) {
         this.rdvPris = rdvPris;
     }
+
+    @Override
+    public String toString() {
+        return "GestionRdv{" +
+                "idMedecin=" + idMedecin +
+                ", idPatient=" + idPatient +
+                ", rdvPris=" + rdvPris +
+                '}';
+    }
 }

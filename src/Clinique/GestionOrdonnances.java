@@ -39,6 +39,11 @@ public class GestionOrdonnances extends GestionRdv{
         return listMedicament;
     }
 
+    public String[] getMedicament(int medicament) {
+        System.out.print(listMedicament[medicament]);
+        return listMedicament;
+    }
+
     public void addMedicament(Medicament medicament) {
         listMedicament[nbListe - 1] = medicament.getNomMed();
         nbListe++;

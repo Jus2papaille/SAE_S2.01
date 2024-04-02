@@ -43,7 +43,7 @@ public class Main {
         System.out.println(Ord2);
 
         HistoriquePatient historiquePatient1 = new HistoriquePatient(patient1,null, null);
-
+        System.out.println(Ord1.getMedicament(0));
 
     }
 }

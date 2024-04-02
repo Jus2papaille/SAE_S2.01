@@ -12,6 +12,7 @@ public class GestionMedecin {
 		this.prixConsult = prixConsult ;
 	}
 
+
 	public int getIdMed() {
 		return RPPS;
 	}

@@ -21,9 +21,9 @@ public class Main {
         System.out.println();
 
         GestionMedecin gestionMedecin[] = {
-            new GestionMedecin(1, "Maroille", "Matheo", "Cardiologue",1),
-            new GestionMedecin(2, "Coegnet", "Ines", "Dentiste",1),
-            new GestionMedecin(3, "Louis", "nolwenn", "Pediatre",1),
+            new GestionMedecin(1, "Maroille", "Matheo", "Cardiologue",10),
+            new GestionMedecin(2, "Coegnet", "Ines", "Dentiste",75),
+            new GestionMedecin(3, "Louis", "nolwenn", "Pediatre",12),
         };
 
         for (int i = 0; i < gestionMedecin.length ; i++) {
@@ -45,9 +45,9 @@ public class Main {
         System.out.println();
 
         Medicament medicament[] = {
-            new Medicament("Doliprane", 25 , 1),
-            new Medicament("Paracetamol", 25, 2),
-            new Medicament("OmegaNatural", 25, 3),
+            new Medicament(1,"Doliprane", 25 , 10),
+            new Medicament(2,"Paracetamol", 25, 24),
+            new Medicament(3,"OmegaNatural", 25, 59),
         };
 
         for (int i = 0; i < medicament.length ; i++) {
@@ -99,6 +99,19 @@ public class Main {
         System.out.println(recherche.rechercherMedecinParSpecialite("Cardiologue"));
         System.out.println();
 
+        Facturation facturation[] = {
+                new Facturation(1, 0,0,medicament[0],gestionMedecin[0]),
+                new Facturation(2, 0,0,medicament[1],gestionMedecin[1]),
+        }; // 0 = null
+
+        facturation[1].genererFacture(gestionOrdonnances[0]);
+        facturation[0].genererFacture(gestionOrdonnances[1]);
+
+        facturation[0].payerFacture();
+        System.out.println();
+
+        facturation[1].genererFacture(gestionOrdonnances[0]);
+        facturation[0].genererFacture(gestionOrdonnances[1]);
 
 
     }

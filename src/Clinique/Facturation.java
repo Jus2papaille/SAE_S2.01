@@ -1,43 +1,34 @@
 package Clinique;
 
+public class Facturation extends GestionOrdonnances {
+    private int idFacture;
+    private int coutConsultation;
+    private boolean estPaye;
+    private double tmp1;
+    private double tmp2;
 
-public class Facturation {
-    private String nomFacture ;
-
-    public Facturation(String nomfacture) {
-        this.nomFacture = nomfacture;
+    public Facturation(int idFacture, int idPatient, int idMedecin, Medicament medicament, GestionMedecin gestionMedecin){
+        super(idPatient, idMedecin);
+        this.idFacture = idFacture;
+        this.coutConsultation = medicament.getprix() + gestionMedecin.getPrixConsult();
+        this.estPaye = false;
+        this.tmp1 = medicament.getprix();
+        this.tmp2 = gestionMedecin.getPrixConsult();
     }
 
-    public String getFacture() {
-        return nomFacture;
+    public void genererFacture(GestionOrdonnances args) {
+        System.out.println("Facture ID: " + idFacture);
+        System.out.println("Patient ID: " + args.getIdPatient());
+        System.out.println("Medecin ID: " + args.getIdMedecin());
+        System.out.println("Coût de la consultation: " + coutConsultation);
+        System.out.println("Détail payement: "+ tmp1 +" "+ tmp2);
+        System.out.println("Est payé: " + (estPaye ? "Oui" : "Non"));
+        System.out.println();
     }
 
-    public double PrixTotMedi(GestionOrdonnances ordonnance, Medicament [] medicament) {
-        int total = 0;
-
-        for(int i = 0 ; i < GestionOrdonnances.listMedicament.length ; i++ ) {
-            for(int j = 0 ;  j < medicament.length; j++) {
-                if(ordonnance.getMedicament(i).equals(medicament[j])) {
-                    total = total + medicament[j].getPrix;
-                    System.out.println("Nom du médicament : "+ medicament[j] + " Prix :"+ medicament[j].getPrix );
-                }
-
-            }
-        }
-        return total ;
+    public void payerFacture() {
+        this.estPaye = true;
+        System.out.println();
+        System.out.println("La facture a été payée.");
     }
-
-    public double PrixMed(GestionOrdonnances ordonnance) {
-        int medecin = ordonnance.idMedecin.getprixConsult();
-        int SommeTotal = total + medecin ;
-        return medecin  ;
-    }
-
-    public void PrixTotal(GestionOrdonnances ordonnace, Medicament [] medicament ) {
-        System.out.println("Le prix detaillé des medicaments est:"+ PrixTotMedi(GestionOrdonnances ordonnace, Medicament [] medicament));
-        System.out.println("Le prix de la consultation est de :"+ medecin );
-        System.out.println("Le prix total est de :"+ medecin + total )
-    }
-
-
 }

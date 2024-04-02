@@ -20,9 +20,9 @@ public class Main {
         System.out.println();
 
         GestionMedecin gestionMedecin[] = {
-            new GestionMedecin(1, "Maroille", "Matheo", "Cardiologue"),
-            new GestionMedecin(2, "Coegnet", "Ines", "Dentiste"),
-            new GestionMedecin(3, "Louis", "nolwenn", "Pediatre"),
+            new GestionMedecin(1, "Maroille", "Matheo", "Cardiologue",1),
+            new GestionMedecin(2, "Coegnet", "Ines", "Dentiste",1),
+            new GestionMedecin(3, "Louis", "nolwenn", "Pediatre",1),
         };
 
         for (int i = 0; i < gestionMedecin.length ; i++) {
@@ -84,7 +84,11 @@ public class Main {
 
         HistoriquePatient historiquePatient1 = new HistoriquePatient(gestionPatient, gestionOrdonnances, gestionRdv);
 
-        System.out.println(historiquePatient1.getGestionPatients(1));
+        System.out.println(historiquePatient1.getGestionPatients());
+        System.out.println();
+        System.out.println(historiquePatient1.getGestionOrdonnances());
+        System.out.println();
+        System.out.println(historiquePatient1.getGestionRdvs());
 
     }
 }

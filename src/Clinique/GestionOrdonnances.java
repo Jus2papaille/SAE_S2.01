@@ -1,21 +1,25 @@
 package Clinique;
 
+import java.util.Arrays;
+
 //Gestion des ordonnances : permettre aux m´edecins de cr´eer des ordonnances pour les patients, retenir
 //les informations sur les m´edicaments prescrits, la posologie et la dur´ee du traitement.
 public class GestionOrdonnances {
     private int idMedecin;
     private int idPatient;
     private int nbListe = 1;
+    private Prise prise;
     private Medicament medicament;
-    private String [] listMedicament = new String[nbListe];
+    private String[] listMedicament = new String[nbListe];
     private String posologie;
     private int dureeTraitement;
 
-    public GestionOrdonnances(int idMedecin, int idPatient, String posologie, int dureeTraitement) {
+    public GestionOrdonnances(int idMedecin, int idPatient, String posologie, int dureeTraitement,Prise prise) {
         this.idMedecin = idMedecin;
         this.idPatient = idPatient;
         this.posologie = posologie;
         this.dureeTraitement = dureeTraitement;
+        this.prise = prise;
     }
 
     public int getIdMedecin() {
@@ -26,10 +30,6 @@ public class GestionOrdonnances {
         return idPatient;
     }
 
-    public Medicament getMedicament() {
-        return medicament;
-    }
-
     public String getPosologie() {
         return posologie;
     }
@@ -38,13 +38,17 @@ public class GestionOrdonnances {
         return dureeTraitement;
     }
 
-    public void addMedicament(Medicament medicament) {
+    public String[] getListMedicament() {
         for (int i = 0; i < listMedicament.length; i++) {
-            if (listMedicament[i] == null) {
-                listMedicament[i] = String.valueOf(medicament);
-                nbListe++;
-            }
+            System.out.print(listMedicament[i]+",");
         }
+        return listMedicament;
+    }
+
+    public void addMedicament(Medicament medicament) {
+        listMedicament[nbListe - 1] = medicament.getNomMed();
+        nbListe++;
+        listMedicament = Arrays.copyOf(listMedicament, nbListe); // On augmente la taille du tableau source:https://codegym.cc/fr/groups/posts/fr.574.methode-arrays-copyof-en-java
     }
 
     @Override
@@ -52,9 +56,10 @@ public class GestionOrdonnances {
         return "GestionOrdonnances{" +
                 "idMedecin=" + idMedecin +
                 ", idPatient=" + idPatient +
-                ", medicament='" + medicament + '\'' +
+                ", listMedicament=" + Arrays.toString(listMedicament) +
                 ", posologie='" + posologie + '\'' +
-                ", dureeTraitement = " + dureeTraitement + " Jours" +
+                ", dureeTraitement=" + dureeTraitement +
+                ", Prise=" + prise +
                 '}';
     }
 }

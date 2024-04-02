@@ -13,6 +13,10 @@ public class GestionPatient {
 		this.agePatient=agePatient;
 	}
 
+	public GestionPatient() {
+
+	}
+
 	public int getIdPatient() {
 		return idPatient;
 	}

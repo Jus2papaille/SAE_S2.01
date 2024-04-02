@@ -1,6 +1,7 @@
 package Clinique;
 
 
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -89,6 +90,16 @@ public class Main {
         System.out.println(historiquePatient1.getGestionOrdonnances());
         System.out.println();
         System.out.println(historiquePatient1.getGestionRdvs());
+
+        Recherche recherche = new Recherche(List.of(gestionPatient), List.of(gestionMedecin));
+        System.out.println(recherche.rechercherMedecinParNom("Maroille"));
+        System.out.println();
+        System.out.println(recherche.rechercherPatientParNom("Doe"));
+        System.out.println();
+        System.out.println(recherche.rechercherMedecinParSpecialite("Cardiologue"));
+        System.out.println();
+
+
 
     }
 }

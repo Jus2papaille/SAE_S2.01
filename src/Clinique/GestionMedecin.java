@@ -34,8 +34,8 @@ public class GestionMedecin {
 
 	@Override
 	public String toString() {
-		return "Medecin [idMed=" + RPPS + ", nom=" + nom + ", prenom=" + prenom + ", specialisation=" + specialisation
-				+ "prixConsult=" + prixConsult + "]";
+		return "Medecin idMed=" + RPPS + ", nom=" + nom + ", prenom=" + prenom + ", specialisation=" + specialisation
+				+ ", prixConsult=" + prixConsult ;
 	}
 
 }

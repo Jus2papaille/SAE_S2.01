@@ -21,9 +21,6 @@ public class GestionOrdonnances extends GestionRdv{
         this.prise = prise;
     }
 
-    public GestionOrdonnances(int idOrdonnance, int idMedecin, int idPatient) {
-    }
-
     public String getPosologie() {
         return posologie;
     }

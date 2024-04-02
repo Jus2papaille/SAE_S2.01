@@ -71,13 +71,20 @@ public class Main {
         gestionOrdonnances[0].addMedicament(medicament[1]);
         gestionOrdonnances[0].addMedicament(medicament[2]);
         gestionOrdonnances[1].addMedicament(medicament[0]);
-        
+
         for (int i = 0; i < gestionOrdonnances.length ; i++) {
             System.out.println(gestionOrdonnances[i]);
         }
 
-        HistoriquePatient historiquePatient1 = new HistoriquePatient(gestionPatient[0],null, null);
+        System.out.println();
+
         System.out.println(gestionOrdonnances[0].getMedicament(0));
+
+        System.out.println();
+
+        HistoriquePatient historiquePatient1 = new HistoriquePatient(gestionPatient, gestionOrdonnances, gestionRdv);
+
+        System.out.println(historiquePatient1.getGestionPatients(1));
 
     }
 }

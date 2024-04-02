@@ -1,44 +1,41 @@
 package Clinique;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class HistoriquePatient {
-    private GestionPatient patient;
-    private List<GestionOrdonnances> ordonnances;
-    private List<GestionRdv> rendezVous;
+    private GestionPatient [] gestionPatients;
+    private GestionOrdonnances [] gestionOrdonnances;
+    private GestionRdv [] gestionRdvs;
 
-    public HistoriquePatient(GestionPatient patient, List<GestionOrdonnances> ordonnances, List<GestionRdv> rendezVous) {
-        this.patient = patient;
-        this.ordonnances = ordonnances;
-        this.rendezVous = rendezVous;
+    public HistoriquePatient(GestionPatient[] gestionPatients, GestionOrdonnances[] gestionOrdonnances, GestionRdv[] gestionRdvs) {
+        this.gestionPatients = gestionPatients;
+        this.gestionOrdonnances = gestionOrdonnances;
+        this.gestionRdvs = gestionRdvs;
     }
 
-    public GestionPatient getPatient() {
-        return patient;
-    }
-
-    public List<GestionOrdonnances> getOrdonnances() {
-        return ordonnances;
-    }
-
-    public List<GestionRdv> getRendezVous() {
-        return rendezVous;
-    }
-
-    public void addOrdonnances(){
+    public GestionPatient[] getGestionPatients(int a) {
+        return gestionPatients[];
 
     }
 
-    public void setRendezVous(List<GestionRdv> rendezVous) {
-        this.rendezVous = rendezVous;
+    public GestionOrdonnances[] getGestionOrdonnances() {
+        return gestionOrdonnances;
     }
+
+
+    public GestionRdv[] getGestionRdvs() {
+        return gestionRdvs;
+    }
+
+
 
     @Override
     public String toString() {
         return "HistoriquePatient{" +
-                "patient=" + patient +
-                ", ordonnances=" + ordonnances +
-                ", rendezVous=" + rendezVous +
+                "gestionPatients:" + Arrays.toString(gestionPatients) + '\'' +
+                ", gestionOrdonnances=" + Arrays.toString(gestionOrdonnances) +
+                ", gestionRdvs=" + Arrays.toString(gestionRdvs) +
                 '}';
     }
 }

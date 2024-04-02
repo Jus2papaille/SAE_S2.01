@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 //Gestion des ordonnances : permettre aux m´edecins de cr´eer des ordonnances pour les patients, retenir
 //les informations sur les m´edicaments prescrits, la posologie et la dur´ee du traitement.
-public class GestionOrdonnances {
-    private int idMedecin;
-    private int idPatient;
+public class GestionOrdonnances extends GestionRdv{
+
+    private int idOrdonnance;
     private int nbListe = 1;
     private Prise prise;
     private Medicament medicament;
@@ -14,20 +14,14 @@ public class GestionOrdonnances {
     private String posologie;
     private int dureeTraitement;
 
-    public GestionOrdonnances(int idMedecin, int idPatient, String posologie, int dureeTraitement,Prise prise) {
-        this.idMedecin = idMedecin;
-        this.idPatient = idPatient;
+    public GestionOrdonnances(int idOrdonnance,int idMedecin, int idPatient, String posologie, int dureeTraitement,Prise prise,boolean rdvPris ) {
+        super(idMedecin, idPatient, rdvPris);
         this.posologie = posologie;
         this.dureeTraitement = dureeTraitement;
         this.prise = prise;
     }
 
-    public int getIdMedecin() {
-        return idMedecin;
-    }
-
-    public int getIdPatient() {
-        return idPatient;
+    public GestionOrdonnances(int idOrdonnance, int idMedecin, int idPatient) {
     }
 
     public String getPosologie() {
@@ -54,8 +48,9 @@ public class GestionOrdonnances {
     @Override
     public String toString() {
         return "GestionOrdonnances{" +
-                "idMedecin=" + idMedecin +
-                ", idPatient=" + idPatient +
+                "idMedecin=" + getIdMedecin() +
+                ", idPatient=" + getIdPatient() +
+                ", Rdv pris=" + getRdvPris() +
                 ", listMedicament=" + Arrays.toString(listMedicament) +
                 ", posologie='" + posologie + '\'' +
                 ", dureeTraitement=" + dureeTraitement +

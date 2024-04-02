@@ -11,6 +11,10 @@ public class GestionRdv{
         this.rdvPris = rdvPris;
     }
 
+    public GestionRdv() {
+
+    }
+
     public int getIdMedecin() {
         return idMedecin;
     }

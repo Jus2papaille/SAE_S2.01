@@ -14,10 +14,12 @@ public class Main {
         GestionMedecin medecin3= new GestionMedecin(3, "Louis", "nolwenn", "Pediatre");
 
         GestionRdv rdv1= new GestionRdv(medecin1.getIdMed(), patient1.getIdPatient(), true);
+        GestionRdv rdv2= new GestionRdv(medecin2.getIdMed(), patient3.getIdPatient(), true);
+        GestionRdv rdv3= new GestionRdv(medecin3.getIdMed(), patient2.getIdPatient(), true);
 
-        Medicament medicament1 = new Medicament("Doliprane", 25);
-        Medicament medicament2 = new Medicament("Paracetamol", 25);
-        Medicament medicament3 = new Medicament("OmegaNatural", 25);
+        Medicament medicament1 = new Medicament("Doliprane", 25 , 1);
+        Medicament medicament2 = new Medicament("Paracetamol", 25, 2);
+        Medicament medicament3 = new Medicament("OmegaNatural", 25, 3);
 
         System.out.println(patient1);
         System.out.println(patient2);
@@ -28,14 +30,20 @@ public class Main {
         System.out.println(rdv1);
         System.out.println(medicament1);
         System.out.println(medicament2);
+        System.out.println(medicament1.getNomMed());
+        System.out.println(medicament2.getNomMed());
 
-        GestionOrdonnances Ord1 = new GestionOrdonnances(1,2,"2", 4, Prise.MATIN);
+        GestionOrdonnances Ord1 = new GestionOrdonnances(1,1,2,"2", 4, Prise.MATIN,true);
         Ord1.addMedicament(medicament1);
         Ord1.addMedicament(medicament2);
         Ord1.addMedicament(medicament3);
         System.out.println(Ord1);
-        System.out.println(medicament1.getNomMed());
-        System.out.println(medicament2.getNomMed());
-        System.out.println(Ord1.getListMedicament());
+        GestionOrdonnances Ord2 = new GestionOrdonnances(2,2,3,"2", 4, Prise.SOIR,true);
+        Ord2.addMedicament(medicament1);
+        System.out.println(Ord2);
+
+        HistoriquePatient historiquePatient1 = new HistoriquePatient(patient1,null, null);
+
+
     }
 }

@@ -1,37 +1,37 @@
 package Clinique;
 
 public class GestionPatient {
-	private int idClient;
-	private String nomClient;
-	private String prenomClient;
-	private int ageClient;
+	private int idPatient;
+	private String nomPatient;
+	private String prenomPatient;
+	private int agePatient;
 	
-	public GestionPatient (int idClient,String nomClient,String prenomClient, int ageClient){
-		this.idClient=idClient;
-		this.nomClient=nomClient;
-		this.prenomClient=prenomClient;
-		this.ageClient=ageClient;
+	public GestionPatient (int idPatient,String nomPatient,String prenomPatient, int agePatient){
+		this.idPatient=idPatient;
+		this.nomPatient=nomPatient;
+		this.prenomPatient=prenomPatient;
+		this.agePatient=agePatient;
 	}
 
-	public int getIdClient() {
-		return idClient;
+	public int getIdPatient() {
+		return idPatient;
 	}
 
-	public String getNomClient() {
-		return nomClient;
+	public String getNomPatient() {
+		return nomPatient;
 	}
 
-	public String getPrenomClient() {
-		return prenomClient;
+	public String getPrenomPatient() {
+		return prenomPatient;
 	}
 
-	public int getAgeClient() {
-		return ageClient;
+	public int getAgePatient() {
+		return agePatient;
 	}
 
 	@Override
 	public String toString() {
-		return "Patients [idClient=" + idClient + ", nomClient=" + nomClient + ", prenomClient=" + prenomClient
-				+ ", ageClient=" + ageClient + "]";
+		return "Patients [idPatient=" + idPatient + ", nomPatient=" + nomPatient + ", prenomPatient=" + prenomPatient
+				+ ", agePatient=" + agePatient + "]";
 	}
 }

@@ -1,10 +1,12 @@
+package Clinique;
+
 public class GestionPatient {
-private int idClient;
+	private int idClient;
 	private String nomClient;
 	private String prenomClient;
 	private int ageClient;
 	
-	public Patients (int idClient,String nomClient,String prenomClient, int ageClient){
+	public GestionPatient (int idClient,String nomClient,String prenomClient, int ageClient){
 		this.idClient=idClient;
 		this.nomClient=nomClient;
 		this.prenomClient=prenomClient;

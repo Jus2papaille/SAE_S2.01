@@ -114,5 +114,15 @@ public class Main {
         facturation[0].genererFacture(gestionOrdonnances[1]);
 
 
+        System.out.println();
+
+        gestionPatient[1].laisserFeedback(2, "Excellent service", 5);
+        gestionPatient[0].laisserFeedback(3, "Deplorable", 1);
+
+        gestionPatient[0].lireFeedback();
+        gestionPatient[1].lireFeedback();
+
+
+
     }
 }

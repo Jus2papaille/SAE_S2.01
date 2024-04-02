@@ -1,75 +1,60 @@
 package Clinique;
+
 //Gestion des ordonnances : permettre aux m´edecins de cr´eer des ordonnances pour les patients, retenir
 //les informations sur les m´edicaments prescrits, la posologie et la dur´ee du traitement.
 public class GestionOrdonnances {
-    private GestionPatient patient ;
-    private GestionMedecin medecin ;
-    private String date ;
-    private Medicament [] listeMed ;
+    private int idMedecin;
+    private int idPatient;
+    private int nbListe = 1;
+    private Medicament medicament;
+    private String [] listMedicament = new String[nbListe];
+    private String posologie;
+    private int dureeTraitement;
 
-
-
-    private GestionOrdonnances(GestionPatient patient, GestionMedecin medecin, String date,Medicament [] listeMed) {
-        super();
-        this.patient = patient;
-        this.medecin = medecin;
-        this.date = date;
-        this.listeMed = listeMed;
+    public GestionOrdonnances(int idMedecin, int idPatient, String posologie, int dureeTraitement) {
+        this.idMedecin = idMedecin;
+        this.idPatient = idPatient;
+        this.posologie = posologie;
+        this.dureeTraitement = dureeTraitement;
     }
 
-
-    public GestionPatient getPatient() {
-        return patient;
+    public int getIdMedecin() {
+        return idMedecin;
     }
 
-
-    public GestionMedecin getMedecin() {
-        return medecin;
+    public int getIdPatient() {
+        return idPatient;
     }
 
-
-    public String getDate() {
-        return date;
+    public Medicament getMedicament() {
+        return medicament;
     }
 
-
-    public Medicament[] getListeMed() {
-        return listeMed;
+    public String getPosologie() {
+        return posologie;
     }
 
-
-    public void setDate(String date) {
-        this.date = date;
+    public int getDureeTraitement() {
+        return dureeTraitement;
     }
 
-
-    public void setListeMed(Medicament[] listeMed) {
-        this.listeMed = listeMed;
-    }
-
-    public class Medicament {
-        private String nomMed;
-        private int posologie; // nombre de medicaments par prise
-        private enum Prise {MATIN , MIDI, SOIR }
-        /**
-         * @param nomMed
-         * @param posologie
-         */
-        private Medicament(String nomMed, int posologie, Prise prise) {
-            super();
-            this.nomMed = nomMed;
-            this.posologie = posologie;
-            this.Prise = prise;
+    public void addMedicament(Medicament medicament) {
+        for (int i = 0; i < listMedicament.length; i++) {
+            if (listMedicament[i] == null) {
+                listMedicament[i] = String.valueOf(medicament);
+                nbListe++;
+            }
         }
-        public String getNomMed() {
-            return nomMed;
-        }
-        public int getPosologie() {
-            return posologie;
-        };
-
-
-
     }
 
+    @Override
+    public String toString() {
+        return "GestionOrdonnances{" +
+                "idMedecin=" + idMedecin +
+                ", idPatient=" + idPatient +
+                ", medicament='" + medicament + '\'' +
+                ", posologie='" + posologie + '\'' +
+                ", dureeTraitement = " + dureeTraitement + " Jours" +
+                '}';
+    }
 }

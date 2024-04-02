@@ -20,5 +20,7 @@ public class Main {
         System.out.println(medecin2);
         System.out.println(medecin3);
 
+        GestionOrdonnances Ord1 = new GestionOrdonnances(1,2,Medicament.DOLIPRANE,"500mg", 4);
+        System.out.println(Ord1);
     }
 }

@@ -1,5 +1,5 @@
 package Clinique;
-public class GestionRdv {
+public class GestionRdv{
 
     private int idMedecin;
     private int idPatient;

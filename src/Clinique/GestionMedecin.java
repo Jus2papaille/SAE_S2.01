@@ -5,7 +5,7 @@ public class GestionMedecin {
 	private String nom, prenom, specialisation ;
 	
 	public GestionMedecin(int RPPS, String nom, String prenom, String specialisation) {
-		this.RPPS = RPPS ;
+		this.RPPS = RPPS ; // identifiant des medecins
 		this.nom = nom;
 		this.prenom = prenom;
 		this.specialisation = specialisation;
